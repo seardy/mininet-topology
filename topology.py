@@ -33,7 +33,7 @@ def topology():
 	#net.addLink(sta1, ap1)
 
 	
-	net.plotGraph(max_x=100, max_y=100)
+	net.plotGraph(max_x=1400, max_y=1000)
 
 	info(" *** Starting network *** \n")
 	net.build()
