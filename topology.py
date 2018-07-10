@@ -17,17 +17,17 @@ def topology():
 	# Access Point -> Facultad de la salud (Acreditacion)
 	ap1 = net.addAccessPoint('ap1',
 		ssid="Estudiantes,Docentes,Administrativo",
-		mode='g', channel='6', mac='e0:10:7f:2f:ef:48', range=20 , position="40.8854,29.1667,0")
+		mode='g', channel='6', mac='e0:10:7f:2f:ef:48', range=40 , position="40.8854,29.1667,0")
 	
 	# Access Point -> Facultad de la salud (Sala de computo)
 	ap2 = net.addAccessPoint('ap2',
 		ssid="Estudiantes,Docentes,Administrativo",
-		mode='g', channel='11', mac='58:93:96:25:1c:10', range=20, position="68.4896,52.3437,0")
+		mode='g', channel='11', mac='58:93:96:25:1c:10', range=40, position="68.4896,52.3437,0")
 	
 	# Access Point -> Facultad de la salud (Maestria_temp)
 	ap3 = net.addAccessPoint('ap3',
 		ssid="Estudiantes,Docentes,Administrativo",
-		 mode='g', channel='1', mac='2c:e6:cc:1f:76:50', range=20, position="47.9167,66.6667,0")
+		 mode='g', channel='1', mac='2c:e6:cc:1f:76:50', range=40, position="47.9167,66.6667,0")
 
 
 	# Station -> Station 1
