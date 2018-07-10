@@ -14,12 +14,12 @@ def topology():
 			accessPoint=UserAP, 
 			disableAutoAssociation=True)
 
-	# Access Point -> Facultad de la salud (Acreditación)
+	# Access Point -> Facultad de la salud (Acreditacion)
 	ap1 = net.addAccessPoint('ap1',
 		ssid="Estudiantes,Docentes,Administrativo",
 		mode='g', channel='11', mac='e0:10:7f:af:b7:a8', range=20, position="40.8854,29.1667,0")
 	
-	# Access Point -> Facultad de la salud (Sala de cómputo)
+	# Access Point -> Facultad de la salud (Sala de computo)
 	ap2 = net.addAccessPoint('ap2',
 		ssid="Estudiantes,Docentes,Administrativo",
 		mode='g', channel='6', mac='f0:b0:52:7a:31:19', range=20, position="68.4896,52.3437,0")
