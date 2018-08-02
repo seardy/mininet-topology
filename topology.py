@@ -1,29 +1,29 @@
 #!/usr/bin/python
 
 from mininet.wifi.net import Mininet_wifi
-from mininet.node import Controller
+from mininet.node import Controller, RemoteController
 from mininet.log import setLogLevel, info
 from mininet.wifi.node import UserAP
 from mininet.wifi.cli import CLI_wifi
 
 def topology():
-	
+
 	# Creating network
 	net = Mininet_wifi (
-			controller=Controller, 
-			accessPoint=UserAP, 
+			controller=RemoteController,
+			accessPoint=UserAP,
 			disableAutoAssociation=True)
 
 	# Access Point -> Facultad de la salud (Acreditacion)
 	ap1 = net.addAccessPoint('ap1',
 		ssid="Estudiantes,Docentes,Administrativo",
 		mode='g', channel='6', mac='e0:10:7f:2f:ef:48', range=40 , position="40.8854,29.1667,0")
-	
+
 	# Access Point -> Facultad de la salud (Sala de computo)
 	ap2 = net.addAccessPoint('ap2',
 		ssid="Estudiantes,Docentes,Administrativo",
 		mode='g', channel='11', mac='58:93:96:25:1c:10', range=40, position="68.4896,52.3437,0")
-	
+
 	# Access Point -> Facultad de la salud (Maestria_temp)
 	ap3 = net.addAccessPoint('ap3',
 		ssid="Estudiantes,Docentes,Administrativo",
@@ -37,7 +37,7 @@ def topology():
 
 
 	# Adding Controller to Network
-	c1 = net.addController('c1', controller=Controller)
+	c1 = net.addController('c1', controller=RemoteController, ip='192.168.56.101', port=6633)
 
 	# Establishing Propagation Model for network
 	net.propagationModel(model="logDistancePropagationLossModel", exp=3.5)
@@ -49,7 +49,7 @@ def topology():
 	# Adding links between APs
 	net.addLink(ap1,ap2, link="wired")
 	net.addLink(ap2,ap3, link="wired")
-	
+
 	net.plotGraph(max_x=100, max_y=100)
 
 	info(" *** Starting network *** \n")
