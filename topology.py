@@ -1,15 +1,15 @@
 #!/usr/bin/python
 
-from mininet.wifi.net import Mininet_wifi
+from mn_wifi.net import Mininet_wifi
 from mininet.node import Controller, RemoteController
 from mininet.log import setLogLevel, info
-from mininet.wifi.node import UserAP
-from mininet.wifi.cli import CLI_wifi
+from mn_wifi.node import UserAP
+from mn_wifi.cli import CLI_wifi
 
 def topology():
 
 	# Creating network
-	net = Mininet_wifi (
+	net = Mininet_wifi(
 			controller=RemoteController,
 			accessPoint=UserAP,
 			disableAutoAssociation=True)
